@@ -11,3 +11,4 @@ class LibraryDetailView(DetailView):
     template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
 # Create your views here.
+Book.objects.all()
