@@ -34,3 +34,5 @@ if __name__ == '_main_':
     books_by_author()
     books_in_library()
     librarian_for_library()
+
+objects.filter(author=author)    
