@@ -32,3 +32,14 @@ def book_delete(request, pk):
         book.delete()
         return redirect('book_list')
     return render(request, 'bookshelf/book_confirm_delete.html', {'book': book})
+
+
+from .forms import BookSearchForm
+
+def search_books(request):
+    form = BookSearchForm(request.GET)
+    books = Book.objects.none()
+    if form.is_valid():
+        query = form.cleaned_data['query']
+        books = Book.objects.filter(title__icontains=query)
+    return render(request, 'bookshelf/book_list.html', {'form': form, 'books': books})
