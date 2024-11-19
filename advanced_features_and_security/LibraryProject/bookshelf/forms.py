@@ -9,3 +9,4 @@ class BookSearchForm(forms.Form):
         if not data.isalnum():
             raise forms.ValidationError("Invalid input!")
         return data
+    
