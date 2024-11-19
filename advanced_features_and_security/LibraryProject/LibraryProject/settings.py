@@ -126,3 +126,25 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Custom User Model
 AUTH_USER_MODEL = 'users.CustomUser'
+
+import os
+
+# Ensure DEBUG is False in production
+DEBUG = False
+
+# Set allowed hosts for production
+ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
+
+# Secure settings
+SECURE_BROWSER_XSS_FILTER = True  # Enable XSS filter
+X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent content type sniffing
+
+# Use secure cookies
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookie is sent over HTTPS
+SESSION_COOKIE_SECURE = True  # Ensure session cookie is sent over HTTPS
+
+# Optional: HSTS settings for enforcing HTTPS
+SECURE_HSTS_SECONDS = 31536000  # One year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
