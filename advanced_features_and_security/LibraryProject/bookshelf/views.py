@@ -33,6 +33,7 @@ def book_delete(request, pk):
         return redirect('book_list')
     return render(request, 'bookshelf/book_confirm_delete.html', {'book': book})
 
+from .forms import ExampleForm
 
 from .forms import BookSearchForm
 
