@@ -15,3 +15,4 @@ from .serializers import BookSerializer
 class BookViewSet(ModelViewSet):
     queryset = Book.objects.all()  # All books in the database
     serializer_class = BookSerializer  # Use the BookSerializer
+    viewsets.ModelViewSet
