@@ -8,3 +8,4 @@ class BookList(ListAPIView):
     queryset = Book.objects.all()  # Retrieve all books
     serializer_class = BookSerializer  # Use the serializer to format data
 # Create your views here.
+generics.ListAPIView
